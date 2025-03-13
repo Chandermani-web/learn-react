@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+.navbar{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    /* background-color: #222; */
+    color: bisque;
+}
+
+#logo{
+    color: aqua;
+    margin-left: 30px;
+    box-shadow: 7px 7px 1px 1px #111;
+    text-shadow: 2px 2px 1px wheat;   
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.registration{
+    background-color: orange;
+    padding: 10px;
+    color: white;
+    border-radius: 30px;
+}
+
+li:hover{
+    color: orange;
+    text-decoration-color: white;
+    text-decoration: underline;
+}
