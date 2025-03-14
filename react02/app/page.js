@@ -1,50 +1,15 @@
 "use client";
 import Image1 from './assets/Screenshot 2025-03-13 211034.png';
 import { gsap } from 'gsap/gsap-core';
-import { useGSAP } from '@gsap/react';
+import Animation from './Components/Animation';
+
 
 export default function Home() {
   const txt = "This is 13-03-2025 , Toady i learned what is react and how it work , understand about it's control flow, creation of a react-folder and how to run this in build environment and dev/start environment.".split(" ");
 
-  useGSAP(()=>{
-    const tl = gsap.timeline();
-    gsap.from("body",{
-      backgroundImage: "linear-gradient(-45deg, red, blue,green)",
-      duration: 2,
-      ease: "power2.inOut",
-    }),
-    
-    gsap.from(".navbar li",{
-      opacity: 0,
-      y: -200,
-      duration:1,
-      stagger: 0.2,
-      ease: "power2.inOut",
-    }),
-    gsap.from("#logo",{
-      rotateX: 720,
-      duration: 2,
-    })
-    gsap.from(".main1 h1",{
-      x: 300,
-      opacity: 0,
-      textShadow: "8px 8px 1px red",
-      duration: 2,
-    }),
-    gsap.from(".main1 p span",{
-      y: 40,
-      opacity: 0,
-      duration: 3,
-      stagger: 0.2,
-    }),
-    gsap.from(".main2 img",{
-      scale: 0,
-      duration: 1,
-    })
-})
-
   return (
     <>
+    <Animation />
     <div className="navbar p-10 flex justify-between mt-2">
         <h1 id="logo" className="text-5xl font-extrabold text-blue-500">OGO</h1>
         <ul className='nav-links flex gap-15 text-1.5xl uppercase font-bold'>
