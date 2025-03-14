@@ -1,0 +1,33 @@
+body{
+    background-color: black;
+    color:aliceblue;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 400px;
+}
+
+.counter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button{
+    width: 100px;
+}
+
+.color-section{
+    display: flex;
+    justify-content: space-evenly;
+    border: 10px solid #666;
+    padding: 40px;
+    border-radius: 50px;
+}
+
+.color-section span{
+    height: 50px;
+    width: 50px;
+}
