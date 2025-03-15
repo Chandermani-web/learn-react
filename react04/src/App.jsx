@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import './App.css';
 
 const App = () => {
@@ -6,6 +6,10 @@ const App = () => {
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [characterAllowed, setCharacterAllowed] = useState(false);
   const [password, setPassword] = useState("");
+
+  // useRef hook
+
+  const passwordRef = useRef(null)
 
   const passwordGenerator = useCallback(() => {
     let pass = "";
@@ -22,10 +26,12 @@ const App = () => {
     setPassword(pass);
   }, [length, numberAllowed, characterAllowed]);
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(password);
-    alert("Password copied to clipboard!");
-  };
+  const copyToClipboard = useCallback(()=>{
+    passwordRef.current?.select()
+    window.navigator.clipboard.writeText(password)
+  },[password])
+
+
 
   useEffect(()=>{
     passwordGenerator()
@@ -36,11 +42,11 @@ const App = () => {
       <div className="container">
         <h1>Password Generator</h1>
         <div className="input-container">
-          <input type="text" value={password} readOnly className="input" placeholder="Password" />
+          <input type="text" value={password} readOnly className="input" placeholder="Password" ref={passwordRef}/>
           <button onClick={copyToClipboard}>Copy</button>
         </div>
         <div className="controls">
-          <input type="range" min="4" max="20" value={length} onChange={(e) => setLength(e.target.value)} />
+          <input type="range" min="4" max="50" value={length} onChange={(e) => setLength(e.target.value)} />
           <label>Length: {length}</label>
           <input type="checkbox" checked={numberAllowed} onChange={() => setNumberAllowed(!numberAllowed)} />
           <label>Include Numbers</label>
