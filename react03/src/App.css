@@ -27,7 +27,8 @@ button{
     border-radius: 50px;
 }
 
-.color-section span{
-    height: 50px;
-    width: 50px;
+span:hover{
+    font-size: x-large;
+    color: darkgoldenrod;
+    transition: 0.5s;
 }

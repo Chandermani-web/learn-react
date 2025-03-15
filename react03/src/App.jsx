@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import './App.css'
+import { useEffect } from 'react';
 const App = () => {
     const [counter, setcounter] = useState(0);
     const [bgcolor, setbgcolor] = useState("white");
+
 
     const increment = () => {
         setcounter(counter=>counter+1);
@@ -14,11 +16,17 @@ const App = () => {
         }
     }
 
-    const colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink", "brown", "cyan", "magenta"];
+    const colors = ["red", "blue", "green", "yellow", "black", "orange", "pink", "brown", "cyan", "magenta"];
 
     const changecolor = (color) => {
-        document.querySelector("body").style.backgroundColor = color;
+        if(color == "black"){
+            document.querySelector("body").style.backgroundColor = color;
+        document.querySelector("body").style.color = "white";
+        }
+        else{
+            document.querySelector("body").style.backgroundColor = color;
         document.querySelector("body").style.color = "black";
+        }
     }
 
   return (
@@ -31,7 +39,7 @@ const App = () => {
     <div className='color-section'>
         {colors.map((color,index)=>{
             return (
-                <span key={index} className='{color}' onClick={()=>changecolor(color)} style={{color: color , backgroundColor: color, padding: "10px",boxShadow: "0 0 10px 10px #222"}}></span>
+                <span key={index} className='{color}' onClick={()=>changecolor(color)} style={{color: "#444" , textTransform: "uppercase" , fontWeight: "bolder" , backgroundColor: color, padding: "5px",boxShadow: "0 0 10px 10px #222" , borderRadius: "15px"}}>{color}</span>
             )
         })}
     </div>

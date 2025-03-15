@@ -1,0 +1,89 @@
+/* General Styles */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    padding: 20px;
+    width: 400px;
+    background-color: #111;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+/* Input Container */
+.input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.input-container input {
+    flex: 1;
+    background: transparent;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+/* Buttons */
+button {
+    outline: none;
+    background-color: rgba(0, 0, 255, 0.7);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 255, 0.9);
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.controls label {
+    font-size: 14px;
+}
+
+.controls input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-left: 5px;
+}
+
+.controls input[type="range"] {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+/* Copy Button */
+.copy-btn {
+    background-color: #00cc66;
+    margin-left: 5px;
+}
+
+.copy-btn:hover {
+    background-color: #00994d;
+}
