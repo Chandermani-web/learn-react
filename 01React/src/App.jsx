@@ -3,9 +3,9 @@ import './App.css'
 
 const App = () => {
   return (
-    <div>
+    <>
       <div className="navbar">
-        <h1 id="logo">OGO</h1>
+        <h1 id="logo">DCN</h1>
         <ul className='nav-links'>
           {["home","about","service","contact","signup/login"].map((item, index, array)=>{
             return (
@@ -16,7 +16,10 @@ const App = () => {
           })}
         </ul>
       </div>
-    </div>
+      <div className="animation">
+        <div className="ractangle"></div>
+      </div>
+    </>
   )
 }
 
